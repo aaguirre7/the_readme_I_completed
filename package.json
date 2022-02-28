@@ -1,14 +1,26 @@
 {
-  "name": "static-site",
+  "name": "the_readme_i_completed",
   "version": "1.0.0",
-  "description": "",
+  "description": "Readme Generator",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "aaguirre7",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "^6.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaguirre7/the_readme_I_completed.git"
+  },
+  "keywords": [
+    "readme",
+    "generator"
+  ],
+  "bugs": {
+    "url": "https://github.com/aaguirre7/the_readme_I_completed/issues"
+  },
+  "homepage": "https://github.com/aaguirre7/the_readme_I_completed#readme"
 }
