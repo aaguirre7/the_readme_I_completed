@@ -79,7 +79,6 @@ function generateMarkdown(askNow) {
   ## Table of Contents
   ${installCheck(askNow.install)}
   * [Usage](#usage)
-  * [License](#License)
   ${contributeCheck(askNow.contribution)}
   ${testCheck(askNow.testing)}
   * [Questions](#questions)
@@ -87,7 +86,6 @@ function generateMarkdown(askNow) {
   ${generateInstall(askNow.install)}
   ## Usage
   ${askNow.usage}
-  ## License
   ${myLicense(askNow.license)}
   ${generateContribute(askNow.contribution)}
   ${generateTesting(askNow.testing)}

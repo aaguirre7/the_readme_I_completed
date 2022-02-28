@@ -1,29 +1,24 @@
 
-  ![GitHub](https://img.shields.io/github/license/aaguirre7/the_readme_I_completed)
-  # the_readme_I_completed
+  ![GitHub](https://img.shields.io/github/license/octocat/git-consortium)
+  # git-consortium
   ## Description
-  a qujick and easy way to create a profecional looking readme 
+  This repository is meant to provide an example for editing lists in Markdown. For some more information on Markdown, check out our guide, "Markdown Basics". Thanks! 💖
   ## Table of Contents
-  * [Installation](#installation)
+  
   * [Usage](#usage)
-  * [License](#License)
   * [Contributions](#contributions)
   
   * [Questions](#questions)
   
-  ## Installation
-  please download the repo toyour system and in the directory of the repo install NODEjs and the dependencies required
   
   ## Usage
-  just type "nodeindex.js" and see the magic happen
-  ## License
+  This is for educational propuses only 
   
-  * This application is covered under the undefined license
   ## Contributions
-  please email before making any chnages so they can be approved
+  Please send your contributions to the email in the readme. DO NOT COMMIT 
   
   
   ## Questions
-  Created by: [aaguirre7](https://github.com/aaguirre7)
+  Created by: [octocat](https://github.com)
   
-  If you have any further questions please feel free to contact me at [aguirre.abraham@gmail.com](aguirre.abraham@gmail.com)
+  If you have any further questions please feel free to contact me at [octocat@github.com](octocat@github.com)
