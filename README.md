@@ -111,6 +111,10 @@ Once the program starts answer all the relevant questions until the program fini
 
 The new Readme will be sotred in the dist folder and you can copy it to your working repo.
 
+
+https://user-images.githubusercontent.com/95892904/155947711-f0d53f2b-8470-4068-9f5d-4fd43e7db939.mov
+
+
 -------------------------
 Thank you for taking time looking at this page.
 
