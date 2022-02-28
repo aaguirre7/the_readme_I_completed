@@ -1,8 +1,8 @@
 // TODO: Include packages needed for this application
-const { truncate, write } = require('fs');
+
 const inquirer = require('inquirer');
-const { type } = require('os');
-const [generateMarkdown, writeFile] = require("./utils/generateMarkdown.js");
+const generateMarkdown = require('./utils/generateMarkdown.js');
+const writeFile = require('./utils/writeMD.js');
 
 // TODO: Create an array of questions for user input
 const theQuestions = () => {
@@ -10,12 +10,12 @@ const theQuestions = () => {
         {
             type: 'input',
             name: 'title',
-            message: 'What is the name of your repo?',
+            message: '💡 What is the name of your repo?',
             validate: titleInput => {
                 if (titleInput) {
                     return true;
                 } else {
-                    console.log('Please enter your project name');
+                    console.log('⚠️ Please enter your project name');
                     return false;
                 }
             }
@@ -23,12 +23,12 @@ const theQuestions = () => {
         {
             type: 'input',
             name: 'about',
-            message: 'Make it cool add a description:',
+            message: '📄 Make it cool add a description:',
             validate: aboutInput => {
                 if (aboutInput) {
                     return true;
                 } else {
-                    console.log('Dont be lazy, say something about what you have done')
+                    console.log('⚠️ Dont be lazy, say something about what you have done')
                     return false;
                 }
             }
@@ -36,13 +36,13 @@ const theQuestions = () => {
         {
             type: 'confirm',
             name: 'confirmInstall',
-            message: 'Does your project need special instructions on how to install?',
+            message: '📦 Does your project need special instructions on how to install?',
             default: true
         },
         {
             type: 'input',
             name: 'install',
-            message: 'Enter your installation instructions:',
+            message: '📄 Enter your installation instructions:',
             when: ({ confirmInstall }) => {
                 if (confirmInstall) {
                     return true;
@@ -54,7 +54,7 @@ const theQuestions = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'Please explain the usage of this project:',
+            message: '🚀 Please explain the usage of this project:',
             validate: usageInput => {
                 if (usageInput) {
                     return true;
@@ -65,19 +65,19 @@ const theQuestions = () => {
         },
         {
             type: 'list',
-            name: 'license',
+            name: '📝 license',
             choices: ['MIT', 'GNU', 'Apache', 'BSD', 'ISC']
         },
         {
             type: 'confirm',
             name: 'confirmContribute',
-            message: 'Will your project be open to contributions?',
+            message: '🤝 Will your project be open to contributions?',
             default: true
         },
         {
             type: 'input',
             name: 'contribution',
-            message: 'so you have contributions, but you need to explain them guidelines:',
+            message: '📄 so you have contributions, but you need to explain them guidelines:',
             when: ({ confirmContribute }) => {
                 if (confirmContribute) {
                     return true
@@ -89,13 +89,13 @@ const theQuestions = () => {
         {
             type: 'confirm',
             name: 'confirmTest',
-            message: 'Will your project need testing instructions?',
+            message: '📄 Will your project need testing instructions?',
             default: true
         },
         {
             type: 'input',
             name: 'testing',
-            message: 'Please input testing instructions for the user:',
+            message: '⚠️ Please input testing instructions for the user:',
             when: ({ confirmTest }) => {
                 if (confirmTest) {
                     return true;
@@ -107,12 +107,12 @@ const theQuestions = () => {
         {
             type: 'input',
             name: 'githubUsername',
-            message: 'What is your GitHub username?',
+            message: '👤 What is your GitHub username?',
             validate: gitInput => {
                 if (gitInput) {
                     return true;
                 } else {
-                    console.log('Username? seriously you cant avoid this');
+                    console.log('⚠️ Username? seriously you cant avoid this');
                     return false;
                 }
             }
@@ -120,12 +120,12 @@ const theQuestions = () => {
         {
             type: 'input',
             name: 'gitLink',
-            message: 'Please enter your GitHub Profile Link:',
+            message: '🏠 Please enter your GitHub Profile Link:',
             validate: gitLinkInput => {
                 if (gitLinkInput) {
                     return true;
                 } else {
-                    console.log('uhn... can you read? Github profile Link please');
+                    console.log('⚠️ uhn... can you read? Github profile Link please');
                     return false;
                 }
             }
@@ -133,24 +133,20 @@ const theQuestions = () => {
         {
             type: 'input',
             name: 'email',
-            message: 'Please enter your email adress for people to contact you:',
+            message: '👤 Please enter your email adress for people to contact you:',
             validate: emailInput => {
                 if (emailInput) {
                     return true;
                 } else {
-                    console.log('No email? then no one will be able to tell you how cool this is');
+                    console.log('⚠️ No email? then no one will be able to tell you how cool this is');
                     return false;
                 }
             }
         }
 
     ])
-        .then(data => {
-            return generateMarkdown(data);
-        })
-        .then(pageMarkdown => {
-            return writeFile(pageMarkdown);
-        })
+        .then(response => generateMarkdown(response))
+        .then(newReadme =>writeFile(newReadme))
         .catch(err => {
             console.log(err);
         })

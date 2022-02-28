@@ -1,11 +1,14 @@
-const fs = require('fs');
-const { resolve } = require('path');
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+/**
+ * 
+ * @param {string} license 
+ * @returns 
+ */
 function myLicense(license) {
   if (license) {
-    return `![${license} License](https://img.shields.io/badge/license-${license.split(' ').join('%20')}-blue)
-`;
+    let mylic = license.split(' ').join('%20'); 
+    return `![${license} License](https://img.shields.io/badge/license-${mylic}-blue)`;
 } else {
     return '';
 }
@@ -60,50 +63,39 @@ const testCheck = check => {
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+/**
+ * 
+ * @param {string} license 
+ * @returns 
+ */
+
+function generateMarkdown(askNow) {
   
   return `
-  ![GitHub](https://img.shields.io/github/license/${data.githubUsername}/${data.title})
-  # ${data.title}
+  ![GitHub](https://img.shields.io/github/license/${askNow.githubUsername}/${askNow.title})
+  # ${askNow.title}
   ## Description
-  ${data.about}
+  ${askNow.about}
   ## Table of Contents
-  ${installCheck(data.install)}
+  ${installCheck(askNow.install)}
   * [Usage](#usage)
-  * [${myLicense}](#license)
-  ${contributeCheck(data.contribution)}
-  ${testCheck(data.testing)}
+  * [License](#License)
+  ${contributeCheck(askNow.contribution)}
+  ${testCheck(askNow.testing)}
   * [Questions](#questions)
   
-  ${generateInstall(data.install)}
+  ${generateInstall(askNow.install)}
   ## Usage
-  ${data.usage}
+  ${askNow.usage}
   ## License
-  * This application is covered under the ${data.license} license
-  ${generateContribute(data.contribution)}
-  ${generateTesting(data.testing)}
+  ${myLicense(askNow.license)}
+  ${generateContribute(askNow.contribution)}
+  ${generateTesting(askNow.testing)}
   ## Questions
-  Created by: [${data.githubUsername}](${data.gitLink})
+  Created by: [${askNow.githubUsername}](${askNow.gitLink})
   
-  If you have any further questions please feel free to contact me at [${data.email}](${data.email})
+  If you have any further questions please feel free to contact me at [${askNow.email}](${askNow.email})
 `;
 }
-const writeFile = fileContent => {
-  return new Promise((resolve, reject) => {
-      fs.writeFile('./dist/README.md', fileContent, err => {
-          if (err) {
-              reject(err);
-              return;
-          }
 
-          resolve({
-              ok: true,
-              message: 'File Created!'
-          });
-      });
-  });
-}
-
-module.exports = 
-  generateMarkdown, 
-  writeFile;
+module.exports = generateMarkdown;
