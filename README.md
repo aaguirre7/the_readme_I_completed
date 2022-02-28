@@ -54,8 +54,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Challange
 
-[![Product Name Screen Shot][product-screenshot]](./assets/images/screenshot_1.png)
-[![Product Name Screen Shot][product-screenshot]](./assets/images/screenshot_2.png)
+[![Product Name Screen Shot][product-screenshot1]](./assets/images/screenshot_1.png)
+[![Product Name Screen Shot][product-screenshot2]](./assets/images/screenshot_2.png)
 ### The Task
 
 AS A developer
@@ -111,6 +111,7 @@ Once the program starts answer all the relevant questions until the program fini
 
 The new Readme will be sotred in the dist folder and you can copy it to your working repo.
 
+[![Product Video][product-video]](./assets/videos/2022-02-28 02-51-40.mov)
 
 https://user-images.githubusercontent.com/95892904/155947711-f0d53f2b-8470-4068-9f5d-4fd43e7db939.mov
 
@@ -132,4 +133,6 @@ Project Link: [https://demo-portfolio.abrahamaguirre.com](https://demo-porfolio.
 <!-- MARKDOWN LINKS & IMAGES -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/abraham-aguirre-1b237293/
-[product-screenshot]: ./assets/images/screenshot.png
+[product-screenshot1]: ./assets/images/screenshot_1.png
+[product-screenshot2]: ./assets/images/screenshot_2.png
+[product-video]: ./assets/videos/2022-02-28 02-51-40.mov
