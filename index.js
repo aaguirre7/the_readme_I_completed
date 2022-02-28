@@ -2,8 +2,8 @@
 const { truncate, write } = require('fs');
 const inquirer = require('inquirer');
 const { type } = require('os');
-const generateMarkdown = require("./utils/generateMarkdown.js");
-const writeFile = require('./utils/generateFile.js');
+const [generateMarkdown, writeFile] = require("./utils/generateMarkdown.js");
+
 // TODO: Create an array of questions for user input
 const theQuestions = () => {
     return inquirer.prompt([
